@@ -1,0 +1,21 @@
+const user={
+    name:'omer',
+    age:21,
+    balance:101,
+    getDetails: function(){
+        console.log(`Name:${this.name}
+Age:${this.age}
+Balance:${this.balance}`);
+    },
+    updateBalance:function(b){
+        if(b<0) return undefined
+        this.balance=b
+        console.log(this.balance);
+        
+    }
+}
+
+console.log(user);
+// console.log(user.getDetails);
+user.getDetails()
+user.updateBalance(20)
