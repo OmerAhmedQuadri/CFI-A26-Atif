@@ -1,0 +1,19 @@
+{
+  "dependencies": {
+    "axios": "^1.13.6",
+    "nodemon": "^3.1.14",
+    "readline-sync": "^1.4.10"
+  },
+  "name": "client",
+  "version": "1.0.0",
+  "description": "",
+  "main": "client.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module"
+}

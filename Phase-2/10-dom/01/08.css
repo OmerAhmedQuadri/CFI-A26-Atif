@@ -1,0 +1,56 @@
+body{
+    margin: 20px 40px;
+    margin-right: 100px;
+    margin-left: 100px;
+}
+.resume{
+    position: relative;
+    margin-left: 25px;
+}
+.logo{
+    position: absolute;
+    top: -5px;
+    left: 10px;
+    margin: 10px;
+    height: 130px;
+    border-radius: 50px;
+}
+.para{
+    /*text-align: center;*/
+    padding: 50px 50px  ;
+    padding-top: 5px;
+    margin-top: -10px;
+}
+.education{
+    padding: 50px 50px;
+    padding-top: 1px;
+    margin-top: -50px;
+    margin-left: 10px;
+}
+.left li{
+    font-weight: bold;
+}
+.left p{
+    margin: 3px 20px;
+    max-width: 100%;
+}
+.right{
+    font-weight: bold;
+    /* white-space: nowrap; */
+    margin:0px 100px 0px 300px;
+    /* margin-bottom: 0px; */
+}
+.edu-items {
+    display: flex;
+    /* font-weight: bold; */
+    justify-content: space-between;
+    align-items: flex-start; 
+    margin-bottom: 25px;
+}
+.edu-list {
+    padding-left: 20px; /* keeps bullets */
+}
+.left{
+    /* font-weight: bold; */
+}
+

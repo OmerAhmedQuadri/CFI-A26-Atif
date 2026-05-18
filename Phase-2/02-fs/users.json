@@ -1,0 +1,22 @@
+[
+    {
+        "name": "omer",
+        "age": 21,
+        "city": "Hyderabad"
+    },
+    {
+        "name": "fahad",
+        "age": 21,
+        "city": "tolichowki"
+    },
+    {
+        "name": "fazal",
+        "age": 21,
+        "city": "Masab Tank"
+    },
+    {
+        "name": "atifuddin",
+        "age": 20,
+        "city": "idpl"
+    }
+]

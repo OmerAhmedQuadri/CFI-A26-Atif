@@ -1,0 +1,122 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    margin: 0px;
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: black;
+}
+#card-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    border: none;
+    width: 330px;
+    border-radius: 15px;
+    min-width: 300px;
+    background-color: white;
+    padding-bottom: 20px;
+}
+
+#dog-img{
+    height: 170px;
+    width: 300px;
+    padding: 15px;
+    border: none;
+    border-radius: 35px;
+    margin-bottom: -30px;
+}
+#dog-details ul li{
+    border: none;
+    border-radius: 7px;
+    display: flex; 
+    gap: 3px;
+    align-items: flex-start;
+    background-color: rgb(199, 198, 198);
+    opacity: 0.9;
+    padding: 4px;
+    padding-inline: 5px;
+    margin: 5px;
+    height: 35px;
+    width: 270px;
+    margin-left: 30px;
+    margin-right: 33px;
+    /* margin-top: 20px; */
+    justify-content: flex-start;
+    font-size: 11px;
+}
+#dog-details ul{
+    display: flex;
+    flex-direction: column;
+    /* align-items: flex-start; */
+    /* width: auto; */
+    margin: 10px;
+    margin-top: 7px;
+    
+}
+#temp{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    align-content: flex-start;
+}
+#dog-btn{
+    border: none;
+    border-radius: 7px;
+    background-color: black;
+    color: white;
+    padding: 10px;
+    padding-inline: 87px;
+    transition: 100ms;
+    transform: rotate3d();
+    /* font-size: 16px; */
+    cursor: pointer;
+        border: 1px solid #000000;
+
+}
+#dog-btn:hover{
+    background-color: rgb(33, 29, 29);
+}
+
+li{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 10px;
+    /* width: auto; */
+}
+li strong{
+    display: block;
+    font-weight: bold;
+}
+li p{
+    /* margin: 20px 0 0 0; */
+    text-align: left;
+    padding: 1px;
+    margin: 5px 0 0;
+    word-wrap: break-word;
+    line-height: 1.4;
+}
+#dog-name{
+    margin-top: 25px;
+}
+#dog-details ul li strong {
+    min-width: 120px;
+}
+#dog-details li p {
+    margin: 0;
+    /* margin: 5px 0 0; */
+    word-wrap: break-word;
+    line-height: 1.4;
+}

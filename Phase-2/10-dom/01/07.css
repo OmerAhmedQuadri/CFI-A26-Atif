@@ -1,0 +1,17 @@
+body{
+    box-flex-group: rgb(19, 19, 19);
+    font-family: Arial, sans-serif
+}
+.prod-card{
+    background-color: grey;
+    width: 300px;
+    height: 200px;
+    padding-bottom: 105px;
+    padding-top: 15px;
+    margin: 30px;
+    border: 1px solid black;
+    border-radius: 8px;
+}
+/*.prod-card:hover{
+    background-color: white;
+}

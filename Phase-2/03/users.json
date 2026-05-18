@@ -1,0 +1,14 @@
+[
+    {
+        "id": 1772535926668,
+        "username": "atif",
+        "password": "$2b$15$hL2HsJQE/RdCAj0ksFTUn.4kdI4SjEWHQBY0RgbxPauIgonhqirWG"
+    },
+    {
+        "id": 1772617836528,
+        "email": "atifuddin5050@gmail.com",
+        "password": "$2b$15$P0aDHu/xRK0cs6LjmjLaIOon/dAI5J1h0luJ2dSe5SpmCivgsInIu",
+        "verified": false,
+        "otp": null
+    }
+]
