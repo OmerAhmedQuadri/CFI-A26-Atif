@@ -1,0 +1,29 @@
+/*
+Task management system (single user)
+
+    Implement the following routes:
+        - input validation is a must where ever required
+        - auth is not required
+    
+    GET:
+        get all tasks - /api/tasks/v1
+        get task by id - /api/tasks/v1/:id
+        get tasks by priority - /api/tasks/v1/priority/:priority
+
+
+    POST:
+        add a task - /api/tasks/v1/add
+         - taskname
+         - deadline
+         - priority
+         - iscompleted
+
+    PUT:
+        update a task - /api/tasks/v1/update
+        mark complete - /api/tasks/v1/markcomplete/:id
+
+    DELETE:
+        delete a task - /api/tasks/v1/delete/:id
+
+
+*/
