@@ -1,8 +1,9 @@
-import { validateRegistrationOtp } from "../services/auth.services";
-import { sendOtp } from "../services/email.services";
-import { createUser, findUserByEmail } from "../services/user.services";
-import { generateJWTToken } from "../utils/jwt.utils";
-import { generateOtp } from "../utils/otp.utils";
+import { cookkieConfig } from "../config/cookie-config.js";
+import { validateRegistrationOtp } from "../services/auth.services.js";
+import { sendOtp } from "../services/email.services.js";
+import { createUser, findUserByEmail } from "../services/user.services.js";
+import { generateJWTToken } from "../utils/jwt.utils.js";
+import { generateOtp } from "../utils/otp.utils.js";
 
 
 

@@ -1,4 +1,4 @@
-import { saveUrl } from "../services/url.services"
+import { getlongUrl, saveUrl } from "../services/url.services.js"
 
 
 export const createShortUrl = async(req, res)=>{

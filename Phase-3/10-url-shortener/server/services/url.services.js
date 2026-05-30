@@ -12,7 +12,7 @@ export const saveUrl = async(url) =>{
     return shortUrl
 }
 
-export const longUrl = async(shortUrl) =>{
+export const getlongUrl = async(shortUrl) =>{
     const url = await Url.findOne({shortUrl})
 
     console.log('from services: ');
