@@ -23,25 +23,25 @@ const userSchema = new mongoose.Schema({
         userRegistration: {
             otp: {
                 type: String,
-                required: true,
-                default: null
+                // required: true,
+                default: 'null'
             },
             expires: {
                 type:String,
-                required: true,
-                default: null
+                // required: true,
+                default: 'null'
             }
         },
         passwordReset: {
             otp: {
                 type: String,
-                required: true,
-                default: null
+                // required: true,
+                default: 'null'
             },
             expires: {
                 type: String,
-                required: true,
-                default: null
+                // required: true,
+                default: 'null'
             }
         }
     }
