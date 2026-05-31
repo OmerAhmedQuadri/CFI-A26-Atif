@@ -20,7 +20,7 @@ export const validateRegistrationOtp = async(email, otp) =>{
                     message: 'OTP Expired'
                 }
             }
-            user.status == 'Active'
+            user.status = 'Active'
             user.authTokens.userRegistration.otp = null
             user.authTokens.userRegistration.expires = null
             await user.save()

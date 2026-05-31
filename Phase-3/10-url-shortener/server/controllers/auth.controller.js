@@ -49,13 +49,13 @@ export const validateUserRegistration = async (req, res) => {
         if (success) {
             return res.status(200).send({
                 success: true,
-                message
+                message: 'OTP verified Successfully'
             })
         }
         else{
             return res.status(400).send({
                 success: false,
-                message
+                message: 'Invalid OTP'
             })
         }
     } catch (error) {

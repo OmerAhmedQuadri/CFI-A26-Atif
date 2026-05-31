@@ -1,4 +1,4 @@
-import Url from "../models/user.model.js"
+import Url from "../models/url.model.js"
 import { generateShortUrl } from "../utils/shortUrl.utils.js"
 
 export const saveUrl = async(url) =>{
@@ -12,10 +12,22 @@ export const saveUrl = async(url) =>{
     return shortUrl
 }
 
-export const getlongUrl = async(shortUrl) =>{
-    const url = await Url.findOne({shortUrl})
+export const getlongUrl = async(shortUrl, click = false) =>{
+    // const url = await Url.findOne({shortUrl})
 
-    console.log('from services: ');
-    console.log(url);
-    return url
+    // console.log('from services: ');
+    // console.log(url);
+    // return url
+
+    if(click){
+        const url = await Url.findOneAndUpdate({ shortUrl }, { $inc: { clicks: 1 } }, { new: true })
+        if (url) return url
+    }
+     else {
+        const url = await Url.findOne({ shortUrl })
+        if (url) return url
+    }
+    if (!url) {
+        return null
+    }
 }

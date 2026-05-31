@@ -1,3 +1,4 @@
+import Url from "../models/url.model.js"
 import { getlongUrl, saveUrl } from "../services/url.services.js"
 
 
@@ -35,4 +36,14 @@ export const redirect = async(req, res)=>{
     }
 
     res.redirect(longUrl)
+}
+
+export const getUserUrls = async(req, res)=>{
+    const user = req.user
+    const urls = await Url.find({userId: user._id})
+    return res.status(200).send({
+        success: true,
+        message: 'User Urls fetched Successfully',
+        data: urls
+    })
 }

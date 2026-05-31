@@ -1,7 +1,9 @@
 import { useState } from 'react'
 import api from '../api/axios.js'
+import { useNavigate, Link } from 'react-router-dom'
 
 const Register = () => {
+  const navigate = useNavigate()
   const [loading, setloading] = useState(false)
   const [error, seterror] = useState('')
   const [success, setsuccess] = useState('')
@@ -40,13 +42,19 @@ const Register = () => {
     seterror('')
     setsuccess('')
     try {
-      const response = await api.post('/auth/register/verify-otp', { email: formData.email, otp: otp })
+      const response = await api.post('/auth/register/verify-otp', { email: formData.email, otp })
       setsuccess(response.data.message)
       setloading(false)
       setstep('success')
+      if(response.data.success){
+        navigate('/login')
+      }
+      
     } catch (error) {
       seterror(error.response.data.message)
+      console.log(error.response);
       setloading(false)
+
     }
   }
 
