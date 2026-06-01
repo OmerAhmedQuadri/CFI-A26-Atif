@@ -25,7 +25,7 @@ export const registerMiddileware = async(req, res, next)=>{
     if(Object.keys(errors).length >0){
         return res.status(404).json({
             success: false,
-            message: 'Bad Request',
+            message: 'please fill details to register!',
             errors
         })
     }
@@ -63,13 +63,13 @@ export const loginMiddileware = async(req, res, next)=>{
         if(!email){
             return res.status(404).send({
                 success: false,
-                message: 'Email is Required'
+                message: 'Email is Required!'
             })
         }
          if(!password){
             return res.status(404).send({
                 success: false,
-                message: 'Password is Required'
+                message: 'Password is Required!'
             })
         }
 
@@ -78,7 +78,7 @@ export const loginMiddileware = async(req, res, next)=>{
         if(!user){
             return res.status(404).send({
                 success: false,
-                message: 'User not Found'
+                message: 'User not Found!'
             })
         }
         if(user.status == 'pending'){
@@ -99,7 +99,7 @@ export const loginMiddileware = async(req, res, next)=>{
         if(!isValid){
             return res.status(404).send({
                 success: false,
-                message: 'Inavlid Credentials'
+                message: 'Inavlid Credentials!'
             })
         }
 

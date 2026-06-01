@@ -27,13 +27,13 @@ const Login = () => {
         setsuccess('')
         try {
             const response = await api.post('/auth/login', formData)
-            setsuccess(response.data.message)
             setloading(false)
             console.log(response.data);
-            if(response.data.success){
+            if (response.data.success) {
+                setsuccess(response.data.message)
+                console.log(response.data.message);
                 navigate('/home')
             }
-            
         } catch (error) {
             console.log(error);
             seterror(error.response.data.message)
@@ -41,23 +41,27 @@ const Login = () => {
         }
     }
     return (
-        <div className='w-full h-screen flex flex-col items-center justify-center'>
-            <div className=' p-4 border rounded-2xl flex flex-col items-center max-w-md'>
-
-                {error && <div className='bg-red-500 text-white p-2 mb-4'>
-                    {error}
-                </div>}
+        <div className='w-full h-screen flex flex-col items-center justify-center bg-gray-500'>
+            <div className=' p-6 border rounded-2xl flex flex-col items-center w-150 gap-5 bg-black'>
+                <h1 className='font-medium text-3xl mb-3 text-white'>Login</h1>
 
                 <div>
-                    <form onChange={onChangeHandler} className=''>
-                        <input type="email" name='email' placeholder='Email' className='border p-2 rounded-lg mb-4 w-full' />
-                        <input type="password" name='password' placeholder='Password' className='border p-2 rounded-lg mb-4 w-full' />
-                        <button type='submit' onClick={loginHandler} className='bg-blue-500 text-white p-2 rounded-lg w-full'>{!loading ? 'Login' : 'Please wait...'}</button>
+                    <form onChange={onChangeHandler} className='flex flex-col gap-2'>
+                        <input type="email" name='email' placeholder='Email' className='border bg-white p-2 rounded-lg mb-4 w-145' />
+                        <input type="password" name='password' placeholder='Password' className='border bg-white p-2 rounded-lg mb-4 w-full' />
+                        if({error && <div className='bg-red-400 text-white p-2 mb-4 rounded flex justify-center'>
+                            {error}
+                        </div>})
+                        else{ success && (
+                            <div className="bg-green-500 text-white p-2 rounded">
+                                {success}
+                            </div>
+                        )}
+                        <p className='mb-2 text-white'>Don't have an account? <a className='text-blue-500' href="/register">Register</a></p>
+                        <button type='submit' onClick={loginHandler} className='bg-blue-500 text-white p-2 rounded-lg hover:cursor-pointer w-full'>{!loading ? 'Login' : 'Please wait...'}</button>
                     </form>
                 </div>
-
             </div>
-
         </div>
     )
 }
