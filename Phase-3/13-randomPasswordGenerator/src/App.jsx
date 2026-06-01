@@ -4,7 +4,7 @@ import { useState, useEffect, useCallback } from 'react'
 const App = () => {
   const [passwordLength, setpasswordLength] = useState(8)
   const [uppercaseAllowed, setuppercaseAllowed] = useState(false)
-  const [lowercaseAllowed, setlowercaseAllowed] = useState(false)
+  const [lowercaseAllowed, setlowercaseAllowed] = useState(true)
   const [numbersAllowed, setnumbersAllowed] = useState(false)
   const [symbolsAllowed, setsymbolsAllowed] = useState(false)
   const [password, setpassword] = useState('')

@@ -4,10 +4,10 @@ import { generateOtp } from "../utils/otp.utils.js"
 import { sendOtp } from "./email.services.js"
 
 export const createUser = async({fullname, email, password}) =>{
-    const password = await User.hashPassword(password, 12)
+    password = await hashPassword(password, 12)
     const user = new User({fullname, email, password})
     user.authTokens.userRegistration.otp = generateOtp()
-    user.authTokens.userRegistration.expires = new Date(Date.now()+ 1 * 60 * 1000)
+    user.authTokens.userRegistration.expires = new Date(Date.now()+ 3 * 60 * 1000).toISOString()
     await user.save()
 
     await sendOtp(email, user.authTokens.userRegistration.otp)
@@ -15,7 +15,7 @@ export const createUser = async({fullname, email, password}) =>{
 }
 
 export const findUserByEmail = async(email) =>{
-    const user = await User.findOne({email}.select('-password -authTokens -__v'))
+    const user = await User.findOne({email}).select('-password -authTokens -__v')
     return user
 }
 
