@@ -16,7 +16,7 @@ export const register = async (req, res) => {
 
         return res.status(200).send({
             success: true,
-            message: 'User Registerd Successfully!'
+            message: 'Registration Successful!'
         })
     } catch (error) {
         console.log(error);
@@ -49,7 +49,7 @@ export const validateUserRegistration = async (req, res) => {
         if (success) {
             return res.status(200).send({
                 success: true,
-                message: 'OTP verified Successfully'
+                message: 'verified!'
             })
         }
         else{
@@ -115,7 +115,7 @@ export const login = async(req, res)=>{
     res.cookie('token', token, cookkieConfig)
     return res.status(200).send({
         success: true,
-        message: 'User Logged in Successfully!',
+        message: 'Login Successful!',
         data: user
     })
 }

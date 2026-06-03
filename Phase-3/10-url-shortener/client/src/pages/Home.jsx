@@ -1,8 +1,10 @@
 import React from 'react'
 import api from '../api/axios.js'
 import { useState, useEffect } from 'react'
+import { useNavigate , NavLink} from 'react-router-dom'
 
 const Home = () => {
+    const navigate = useNavigate()
     const [longUrl, setlongUrl] = useState('')
     const [shortUrl, setshortUrl] = useState('')
     const [error, setError] = useState('')
@@ -50,7 +52,9 @@ const Home = () => {
         
         <div className='w-full h-screen flex flex-col items-center justify-center bg-gray-500'>
             <nav className='bg-black font-bold gap-40 text-blue-500 mb-20 w-230 h-15 rounded-2xl px-15 py-8 flex items-center'>
-                <span className='hover:cursor-pointer'>URL Shortener</span>
+                <NavLink to= "/home" className={({isActive}) =>
+                    isActive ? "text-blue-500" : ""}
+                >URL Shortener</NavLink>
                 <span className='hover:cursor-pointer'>MyUrls</span>
                 <span className='hover:cursor-pointer'>Profile</span>
                 <span className='hover:cursor-pointer'>Logout</span>   

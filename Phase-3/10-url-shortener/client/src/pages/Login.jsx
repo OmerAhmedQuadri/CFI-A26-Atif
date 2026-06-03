@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import api from '../api/axios.js'
 import { useNavigate } from 'react-router-dom'
+import { useEffect } from 'react'
 
 const Login = () => {
     const navigate = useNavigate()
@@ -32,7 +33,9 @@ const Login = () => {
             if (response.data.success) {
                 setsuccess(response.data.message)
                 console.log(response.data.message);
-                navigate('/home')
+                setTimeout(() => {
+                    navigate('/home')
+                }, 1000)
             }
         } catch (error) {
             console.log(error);
@@ -46,18 +49,18 @@ const Login = () => {
                 <h1 className='font-medium text-3xl mb-3 text-white'>Login</h1>
 
                 <div>
-                    <form onChange={onChangeHandler} className='flex flex-col gap-2'>
-                        <input type="email" name='email' placeholder='Email' className='border bg-white p-2 rounded-lg mb-4 w-145' />
-                        <input type="password" name='password' placeholder='Password' className='border bg-white p-2 rounded-lg mb-4 w-full' />
-                        if({error && <div className='bg-red-400 text-white p-2 mb-4 rounded flex justify-center'>
+                    <form onChange={onChangeHandler}  className='flex flex-col items-center w-135'>
+                        <input type="email" name='email' placeholder='Email' className='border bg-white p-2 rounded-lg mb-4 w-135' />
+                        <input type="password" name='password' placeholder='Password' className='border bg-white p-2 rounded-lg w-full' />
+                        if({error && <div className='bg-red-400 text-white p-2 w-fit rounded flex justify-center'>
                             {error}
                         </div>})
-                        else{ success && (
-                            <div className="bg-green-500 text-white p-2 rounded">
+                        else{success && (
+                            <div className="bg-green-500 text-white p-2 rounded mb-3 flex justify-center items-center w-fit">
                                 {success}
                             </div>
                         )}
-                        <p className='mb-2 text-white'>Don't have an account? <a className='text-blue-500' href="/register">Register</a></p>
+                        <p className='mb-4 text-white'>Don't have an account? <a className='text-blue-500' href="/register">Register</a></p>
                         <button type='submit' onClick={loginHandler} className='bg-blue-500 text-white p-2 rounded-lg hover:cursor-pointer w-full'>{!loading ? 'Login' : 'Please wait...'}</button>
                     </form>
                 </div>
